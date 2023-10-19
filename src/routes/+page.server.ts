@@ -9,7 +9,7 @@ type Project = {
 };
 
 const projects: Project[] = await fs
-  .readFile("/projects.json", "utf8")
+  .readFile("/static/projects.json", "utf8")
   .then((data) => JSON.parse(data));
 
 projects.map((project) => {
