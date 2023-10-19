@@ -8,8 +8,10 @@ type Project = {
   technologies: string[];
 };
 
+console.log(await fs.readdir("."));
+
 const projects: Project[] = await fs
-  .readFile("/projects.json", "utf8")
+  .readFile("./projects.json", "utf8")
   .then((data) => JSON.parse(data));
 
 projects.map((project) => {
