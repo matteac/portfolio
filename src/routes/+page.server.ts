@@ -12,7 +12,7 @@ const projects: Project[] = [
     description: "My personal portfolio website.",
     url: "https://portfolio-matteac.vercel.app/",
     image: "https://portfolio-matteac.vercel.app/default.jpg",
-    technologies: ["HTML", "CSS", "TypeScript", "Svelte"],
+    technologies: ["Tailwind", "TypeScript", "Svelte"],
   },
   {
     title: "ProtOrbit",
