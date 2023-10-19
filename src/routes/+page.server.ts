@@ -1,5 +1,3 @@
-import fs from "node:fs/promises";
-
 type Project = {
   title: string;
   description: string;
@@ -8,26 +6,29 @@ type Project = {
   technologies: string[];
 };
 
-console.log(await fs.readdir("."));
-
-const projects: Project[] = await fs
-  .readFile("./projects.json", "utf8")
-  .then((data) => JSON.parse(data));
-
-projects.map((project) => {
-  if (!project.image) {
-    project.image = "/default.jpg";
-  }
-  if (!project.technologies) {
-    project.technologies = [];
-  }
-  if (!project.description) {
-    project.description = "";
-  }
-  if (!project.title) {
-    project.title = "Placeholder";
-  }
-});
+const projects: Project[] = [
+  {
+    title: "Portfolio",
+    description: "My personal portfolio website.",
+    url: "https://portfolio-matteac.vercel.app/",
+    image: "https://portfolio-matteac.vercel.app/default.jpg",
+    technologies: ["HTML", "CSS", "TypeScript", "Svelte"],
+  },
+  {
+    title: "ProtOrbit",
+    description: "An HTTP parser written in Rust.",
+    url: "https://github.com/matteac/protorbit",
+    image: "https://portfolio-matteac.vercel.app/default.jpg",
+    technologies: ["Rust"],
+  },
+  {
+    title: "Breakout clone",
+    description: "A clone of the classic game Breakout.",
+    url: "https://github.com/matteac/breakout",
+    image: "https://portfolio-matteac.vercel.app/default.jpg",
+    technologies: ["Rust", "Macroquad"],
+  },
+];
 
 export async function load() {
   return { projects: projects };
