@@ -1,5 +1,7 @@
 <script lang="ts">
   import DownArrow from "$lib/icons/DownArrow.svelte";
+  import GitHub from "$lib/icons/GitHub.svelte";
+  import Twitter from "$lib/icons/Twitter.svelte";
 
   export let data: any;
 </script>
@@ -13,7 +15,28 @@
 </svelte:head>
 
 <div class="container h-full mx-auto flex flex-col justify-center items-center">
-  <main class="w-full h-screen flex flex-col justify-center items-center">
+  <nav
+    class="w-full h-11 space-x-3 p-3 flex items-center absolute top-0 left-0 bg-secondary-600"
+  >
+    <a
+      href="https://github.com/matteac"
+      referrerpolicy="no-referrer"
+      target="_blank"
+      class="text-2xl font-extrabold text-gray-600 hover:text-gray-50"
+    >
+      <GitHub height="32" width="32" />
+    </a>
+    <a
+      href="https://twitter.com/matteac_mem"
+      referrerpolicy="no-referrer"
+      target="_blank"
+      class="text-2xl font-extrabold text-gray-600 hover:text-gray-50"
+    >
+      <Twitter height="32" width="32" />
+    </a>
+  </nav>
+
+  <header class="w-full h-screen flex flex-col justify-center items-center">
     <h1 class="text-5xl">
       Hi! I'm <a
         href="https://github.com/matteac"
@@ -29,9 +52,9 @@
         width="64"
       />
     </a>
-  </main>
+  </header>
 
-  <article
+  <main
     id="about"
     class="h-screen w-10/12 flex flex-col justify-center items-center relative"
   >
@@ -49,7 +72,7 @@
         width="64"
       />
     </a>
-  </article>
+  </main>
 
   <section class="h-screen">
     <div
@@ -57,10 +80,10 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     >
       {#each data.projects as project}
-        <div
+        <article
           class="card m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
         >
-          <h2 class="text-2xl font-bold">{project.title}</h2>
+          <h4 class="text-2xl font-bold">{project.title}</h4>
           <p>{project.description}</p>
           <p>
             Tech:{#each project.technologies as tech}<span class="pl-1"
@@ -73,13 +96,16 @@
             alt={project.title}
           />
           <a
-            class="font-bold text-lg py-2 w-4/6 h-auto rounded-lg bg-primary-700 hover:bg-primary-500 flex justify-center"
+            class="font-bold text-lg py-2 w-4/6 h-auto rounded-lg bg-secondary-500 hover:bg-tertiary-500 flex justify-center"
             target="_blank"
             referrerpolicy="no-referrer"
             href={project.url}>See Project</a
           >
-        </div>
+        </article>
       {/each}
     </div>
   </section>
 </div>
+
+<style>
+</style>
