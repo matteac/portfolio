@@ -8,12 +8,13 @@
 
 <svelte:head>
   <title>Mateo Acuña</title>
-
 </svelte:head>
 
-<div class="container h-full mx-auto flex flex-col justify-center items-center">
+<div
+  class="container h-full w-full mx-auto flex flex-col justify-center items-center"
+>
   <nav
-    class="w-full h-11 space-x-3 p-3 flex items-center absolute top-0 left-0 bg-secondary-600"
+    class="z-20 w-screen h-11 space-x-3 p-3 flex items-center sticky mr-0 top-0 bg-secondary-600"
   >
     <a
       href="https://github.com/matteac"
@@ -71,11 +72,8 @@
     </a>
   </main>
 
-  <section class="h-screen">
-    <div
-      id="projects"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-    >
+  <section class="h-screen pt-14" id="projects">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {#each data.projects as project}
         <article
           class="card m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
@@ -105,4 +103,7 @@
 </div>
 
 <style>
+  header {
+    margin-top: -2.75rem;
+  }
 </style>
