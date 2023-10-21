@@ -10,7 +10,7 @@ const projects: Project[] = [
   {
     title: "Portfolio",
     description: "My personal portfolio website.",
-    url: "https://portfolio-matteac.vercel.app/",
+    url: "https://github.com/matteac/portfolio",
     image: "https://portfolio-matteac.vercel.app/default.jpg",
     technologies: ["Tailwind", "TypeScript", "Svelte"],
   },
