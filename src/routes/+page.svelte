@@ -8,10 +8,7 @@
 
 <svelte:head>
   <title>Mateo Acuña</title>
-  <meta name="description" content="Mateo Acuña Portfolio" />
-  <meta name="keywords" content="Mateo Acuña, Portfolio, Software Engineer" />
-  <meta name="author" content="Mateo Acuña" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 </svelte:head>
 
 <div class="container h-full mx-auto flex flex-col justify-center items-center">
