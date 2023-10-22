@@ -20,6 +20,7 @@
     class="z-20 w-screen h-11 space-x-3 p-3 flex items-center sticky mr-0 top-0 bg-secondary-600"
   >
     <a
+      title="Go to GitHub"
       href="https://github.com/matteac"
       referrerpolicy="no-referrer"
       target="_blank"
@@ -28,6 +29,7 @@
       <GitHub height="32" width="32" />
     </a>
     <a
+      title="Go to Twitter"
       href="https://twitter.com/matteac_mem"
       referrerpolicy="no-referrer"
       target="_blank"
@@ -40,13 +42,14 @@
   <header class="w-full h-screen flex flex-col justify-center items-center">
     <h1 class="text-5xl">
       Hi! I'm <a
+        title="Go to GitHub"
         href="https://github.com/matteac"
         referrerpolicy="no-referrer"
         target="_blank"
         class="font-extrabold text-secondary-500">Mateo Acuña</a
       >
     </h1>
-    <a href="#about" class="absolute bottom-0">
+    <a title="Scroll to about" href="#about" class="absolute bottom-0">
       <DownArrow
         classname="text-tertiary-800 hover:text-tertiary-400"
         height="64"
@@ -66,7 +69,7 @@
       myself an expert just yet. I've also dabbled in Svelte and web
       development, but my heart is more in the backend and systems programming.
     </p>
-    <a href="#projects" class="absolute bottom-0 self-center justify-self-end">
+    <a title="Scroll to projects" href="#projects" class="absolute bottom-0 self-center justify-self-end">
       <DownArrow
         classname="text-tertiary-800 hover:text-tertiary-400"
         height="64"
@@ -95,6 +98,7 @@
             alt={project.title}
           />
           <a
+            title="See project"
             class="font-bold text-lg py-2 w-4/6 h-auto rounded-lg bg-secondary-500 hover:bg-tertiary-500 flex justify-center"
             target="_blank"
             referrerpolicy="no-referrer"
