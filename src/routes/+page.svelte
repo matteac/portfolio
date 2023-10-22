@@ -60,8 +60,9 @@
 
   <main
     id="about"
-    class="h-screen w-10/12 flex flex-col justify-center items-center relative"
+    class="h-screen space-y-10 w-10/12 flex flex-col justify-center items-center relative"
   >
+    <h2 class="text-5xl">About me</h2>
     <p class="text-xl">
       I'm a high school student with a passion for programming, but I'll be the
       first to admit that I'm not much of a frontend enthusiast. My true
@@ -78,13 +79,14 @@
     </a>
   </main>
 
-  <section class="h-screen pt-14" id="projects">
+  <section class="h-screen pt-24 flex flex-col items-center space-y-10" id="projects">
+    <h2 class="text-5xl">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {#each data.projects as project}
         <article
           class="card m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
         >
-          <h4 class="text-2xl font-bold">{project.title}</h4>
+          <h3 class="text-2xl font-bold">{project.title}</h3>
           <p>{project.description}</p>
           <p>
             Tech:{#each project.technologies as tech}<span class="pl-1"
