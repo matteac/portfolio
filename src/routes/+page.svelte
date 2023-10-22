@@ -2,6 +2,8 @@
   import DownArrow from "$lib/icons/DownArrow.svelte";
   import GitHub from "$lib/icons/GitHub.svelte";
   import Twitter from "$lib/icons/Twitter.svelte";
+  import {style} from "svelte-body"
+
 
   export let data: any;
 </script>
@@ -9,9 +11,10 @@
 <svelte:head>
   <title>Mateo Acuña</title>
 </svelte:head>
+<svelte:body use:style={{backgroundColor:"#040616"}} />
 
 <div
-  class="container h-full w-full mx-auto flex flex-col justify-center items-center"
+  class="container h-full w-screen mx-auto flex flex-col justify-center items-center"
 >
   <nav
     class="z-20 w-screen h-11 space-x-3 p-3 flex items-center sticky mr-0 top-0 bg-secondary-600"
