@@ -89,6 +89,7 @@
               >{/each}
           </p>
           <img
+            loading="lazy"
             class="w-5/6 rounded-lg"
             src={project.image}
             alt={project.title}
