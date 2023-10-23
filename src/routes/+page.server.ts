@@ -15,6 +15,13 @@ const projects: Project[] = [
     technologies: ["Tailwind", "TypeScript", "Svelte"],
   },
   {
+    title: "Notes",
+    description: "A simple note taking app.",
+    url: "https://github.com/matteac/notes",
+    image: "https://portfolio-matteac.vercel.app/default.jpg",
+    technologies: ["Tailwind", "TypeScript", "Svelte"],
+  },
+  {
     title: "ProtOrbit",
     description: "An HTTP parser written in Rust.",
     url: "https://github.com/matteac/protorbit",
