@@ -4,13 +4,13 @@
   import Twitter from "$lib/icons/Twitter.svelte";
   import {style} from "svelte-body"
 
-
   export let data: any;
 </script>
 
 <svelte:head>
   <title>Mateo Acuña</title>
 </svelte:head>
+
 <svelte:body use:style={{backgroundColor:"#040616"}} />
 
 <div
