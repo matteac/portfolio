@@ -111,21 +111,6 @@
       {/each}
     </div>
   </section>
-
-  <section
-    id="contact"
-    class="h-screen w-full pt-24 flex flex-col items-center space-y-10 z-20">
-    <h2 class="text-5xl">Contact</h2>
-    <form action="?/send_email" method="POST" class="flex flex-col text-lg font-bold md:w-2/3 lg:w-2/3 xl:w-1/3 space-y-2 justify-center text-gray-900">
-      <input class="p-2" type="text" name="name" placeholder="Your name" />
-      <input class="p-2" type="email" name="email" placeholder="Your email" />
-      <textarea class="p-2" name="message" placeholder="Your message" rows="5" />
-      <button type="submit" class="btn variant-filled-secondary rounded-none">Send</button>
-    </form>
-    <p> or send me an  
-      <a href="mailto:matteac.rs.dev@outlook.com" class="underline text-tertiary-400">email</a>
-    </p>
-  </section>
 </div>
 
 <style>
