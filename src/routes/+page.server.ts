@@ -40,10 +40,6 @@ const projects: Project[] = [
   },
 ];
 
-export async function load() {
-  return { projects: projects };
-}
-
 const transporter = nodemailer.createTransport({
   host: import.meta.env.VITE_EMAIL_HOST,
   port: Number(import.meta.env.VITE_EMAIL_PORT),
@@ -56,7 +52,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// server actions
+export async function load() {
+  return { projects: projects };
+}
+
 export const actions = {
   send_email: async ({ request }: { request: Request }) => {
     console.log("sending email");
