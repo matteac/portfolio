@@ -110,6 +110,12 @@
       {/each}
     </div>
   </section>
+  <form action="?/send_email" method="post" class="text-black flex flex-col space-y-2">
+    <input type="text" name="name" class="text-gray-500">
+    <input type="email" name="email" class="text-gray-500">
+    <textarea name="message" class="text-gray-500" id="" cols="30" rows="10"></textarea>
+    <button type="submit">Send</button>
+  </form>
 </div>
 
 <style>

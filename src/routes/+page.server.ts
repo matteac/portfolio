@@ -1,3 +1,6 @@
+import { fail } from "@sveltejs/kit";
+import nodemailer from "nodemailer";
+
 type Project = {
   title: string;
   description: string;
@@ -40,3 +43,40 @@ const projects: Project[] = [
 export async function load() {
   return { projects: projects };
 }
+
+const transporter = nodemailer.createTransport({
+  host: import.meta.env.VITE_EMAIL_HOST,
+  port: Number(import.meta.env.VITE_EMAIL_PORT),
+  auth: {
+    user: import.meta.env.VITE_EMAIL_SENDER,
+    pass: import.meta.env.VITE_EMAIL_PASS,
+  },
+  tls: {
+    ciphers: "SSLv3",
+  },
+});
+
+// server actions
+export const actions = {
+  send_email: async ({ request }: { request: Request }) => {
+    try {
+      const data = await request.formData();
+      const name = data.get("name") as string;
+      const email = data.get("email") as string;
+      const message = data.get("message") as string;
+      if (!name || !email || !message) {
+        return fail(400, { error: "Missing required fields" });
+      }
+      let msg_body = `Name: ${name}\nEmail: ${email}\n${message}`;
+      transporter.sendMail({
+        from: email,
+        to: import.meta.env.VITE_EMAIL_ADDRESSE,
+        subject: "[PORTFOLIO] Message from " + name,
+        text: msg_body,
+      });
+    } catch (error) {
+      console.log(error);
+      return fail(400, { error });
+    }
+  },
+};
