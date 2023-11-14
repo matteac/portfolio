@@ -68,12 +68,23 @@ export const actions = {
         return fail(400, { error: "Missing required fields" });
       }
       let msg_body = `Name: ${name}\nEmail: ${email}\n${message}`;
-      transporter.sendMail({
-        from: email,
-        to: import.meta.env.VITE_EMAIL_ADDRESSE,
-        subject: "[PORTFOLIO] Message from " + name,
-        text: msg_body,
-      });
+      transporter.sendMail(
+        {
+          from: email,
+          to: import.meta.env.VITE_EMAIL_ADDRESSE,
+          subject: "[PORTFOLIO] Message from " + name,
+          text: msg_body,
+        },
+        // @ts-ignore
+        (err, info) => {
+          if (err) {
+            console.error(err);
+            return fail(400, { error: err });
+          }
+          console.log(info);
+          return { success: true };
+        },
+      );
     } catch (error) {
       console.log(error);
       return fail(400, { error });
