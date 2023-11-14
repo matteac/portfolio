@@ -79,12 +79,13 @@
     </a>
   </main>
 
-  <section class="h-screen pt-24 flex flex-col items-center space-y-10" id="projects">
+  <section 
+    class="min-h-screen pt-24 flex flex-col items-center space-y-10 relative" id="projects">
     <h2 class="text-5xl">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {#each data.projects as project}
         <article
-          class="card m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
+          class="card rounded-none m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
         >
           <h3 class="text-2xl font-bold">{project.title}</h3>
           <p>{project.description}</p>
@@ -95,13 +96,13 @@
           </p>
           <img
             loading="lazy"
-            class="w-5/6 rounded-lg"
+            class="w-5/6 "
             src={project.image}
             alt={project.title}
           />
           <a
             title="See project"
-            class="font-bold text-lg py-2 w-4/6 h-auto rounded-lg bg-secondary-500 hover:bg-tertiary-500 flex justify-center"
+            class="font-bold text-lg py-2 w-4/6 h-auto rounded-none btn variant-filled-secondary flex justify-center"
             target="_blank"
             referrerpolicy="no-referrer"
             href={project.url}>See Project</a
@@ -110,12 +111,23 @@
       {/each}
     </div>
   </section>
-  <form action="?/send_email" method="post" class="text-black flex flex-col space-y-2">
-    <input type="text" name="name" class="text-gray-500">
-    <input type="email" name="email" class="text-gray-500">
-    <textarea name="message" class="text-gray-500" id="" cols="30" rows="10"></textarea>
-    <button type="submit">Send</button>
-  </form>
+
+
+
+  <section
+    id="contact"
+    class="h-screen w-full pt-24 flex flex-col items-center space-y-10 z-20">
+    <h2 class="text-5xl">Contact</h2>
+    <form action="?/send_email" method="POST" class="flex flex-col text-lg font-bold md:w-2/3 lg:w-2/3 xl:w-1/3 space-y-2 justify-center text-gray-900">
+      <input class="p-2" type="text" name="name" placeholder="Your name" />
+      <input class="p-2" type="email" name="email" placeholder="Your email" />
+      <textarea class="p-2" name="message" placeholder="Your message" rows="5" />
+      <button type="submit" class="btn variant-filled-secondary rounded-none">Send</button>
+    </form>
+    <p> or send me an  
+      <a href="mailto:matteac.rs.dev@outlook.com" class="underline text-tertiary-400">email</a>
+    </p>
+  </section>
 </div>
 
 <style>

@@ -59,6 +59,7 @@ const transporter = nodemailer.createTransport({
 // server actions
 export const actions = {
   send_email: async ({ request }: { request: Request }) => {
+    console.log("sending email");
     try {
       const data = await request.formData();
       const name = data.get("name") as string;
