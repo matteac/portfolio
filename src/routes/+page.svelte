@@ -39,7 +39,7 @@
     </a>
   </nav>
 
-  <header class="w-full h-screen flex flex-col justify-center items-center">
+  <header class="w-full flex flex-col justify-center items-center">
     <h1 class="text-5xl">
       Hi! I'm <a
         title="Go to GitHub"
@@ -60,7 +60,7 @@
 
   <main
     id="about"
-    class="h-screen space-y-10 w-10/12 flex flex-col justify-center items-center relative"
+    class="space-y-10 w-10/12 flex flex-col justify-center items-center relative"
   >
     <h2 class="text-5xl">About me</h2>
     <p class="text-xl">
@@ -80,7 +80,7 @@
   </main>
 
   <section 
-    class="min-h-screen pt-24 flex flex-col items-center space-y-10 relative" id="projects">
+    class="pt-24 flex flex-col items-center space-y-10 relative" id="projects">
     <h2 class="text-5xl">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {#each data.projects as project}
@@ -116,5 +116,12 @@
 <style>
   header {
     margin-top: -2.75rem;
+    height: 100svh;
+  }
+  main {
+    height: 100svh;
+  }
+  section {
+    height: 100svh;
   }
 </style>
