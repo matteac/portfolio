@@ -112,8 +112,6 @@
     </div>
   </section>
 
-
-
   <section
     id="contact"
     class="h-screen w-full pt-24 flex flex-col items-center space-y-10 z-20">
