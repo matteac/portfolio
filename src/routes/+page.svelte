@@ -1,6 +1,7 @@
 <script lang="ts">
-  import DownArrow from "$lib/icons/DownArrow.svelte";
   import GitHub from "$lib/icons/GitHub.svelte";
+  import ProjectCard from "$lib/components/ProjectCard.svelte";
+  import DownArrow from "$lib/icons/DownArrow.svelte";
   import Twitter from "$lib/icons/Twitter.svelte";
   import {style} from "svelte-body"
 
@@ -84,30 +85,13 @@
     <h2 class="text-5xl">Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {#each data.projects as project}
-        <article
-          class="card rounded-none m-2 pb-3 pt-2 justify-center items-center space-y-2 flex flex-col"
-        >
-          <h3 class="text-2xl font-bold">{project.title}</h3>
-          <p>{project.description}</p>
-          <p>
-            Tech:{#each project.technologies as tech}<span class="pl-1"
-                >{tech}</span
-              >{/each}
-          </p>
-          <img
-            loading="lazy"
-            class="w-5/6 "
-            src={project.image}
-            alt={project.title}
-          />
-          <a
-            title="See project"
-            class="font-bold text-lg py-2 w-4/6 h-auto rounded-none btn variant-filled-secondary flex justify-center"
-            target="_blank"
-            referrerpolicy="no-referrer"
-            href={project.url}>See Project</a
-          >
-        </article>
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          repo_link={project.url}
+          tags={project.technologies}
+          image={project.image}
+        />
       {/each}
     </div>
   </section>

@@ -4,18 +4,29 @@
   export let classname: string = "";
 </script>
 
-<svg
+<svg 
   class={classname}
-  fill="currentColor"
-  {height}
-  {width}
-  version="1.1"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 0 330 330"
-  xml:space="preserve"
+  width={width} 
+  height={height} 
+  viewBox="0 0 24 24"  
+  fill="none" 
 >
   <path
-    d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393  c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393  s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+    clip-rule="evenodd"
+    d="M6.92893 10.3431L12 15.4142L17.0711 10.3431L18.4853 11.7573L12 18.2426L5.51472 11.7573L6.92893 10.3431Z"
+    fill="currentColor"
+    fill-rule="evenodd"
   />
 </svg>
+
+<style>
+  svg {
+    border-radius: 50%;
+    padding-bottom: 4px;
+  }
+  svg:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+  }
+</style>

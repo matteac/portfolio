@@ -38,5 +38,5 @@ const projects: Project[] = [
 ];
 
 export async function load() {
-  return { projects: projects };
+  return { projects };
 }
