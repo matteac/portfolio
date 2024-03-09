@@ -1,3 +1,5 @@
+export const prerender = true;
+
 type Project = {
   title: string;
   description: string;
